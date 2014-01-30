@@ -260,10 +260,9 @@ class BelongsToMany extends Relation {
 	 * Add the constraints for a relationship count query on the same table.
 	 *
 	 * @param  \Illuminate\Database\Eloquent\Builder  $query
-	 * @param  \Illuminate\Database\Eloquent\Builder  $parent
 	 * @return \Illuminate\Database\Eloquent\Builder
 	 */
-	public function getRelationCountQueryForSelfJoin(Builder $query, Builder $parent)
+	public function getRelationCountQueryForSelfJoin(Builder $query)
 	{
 		$query->select(new \Illuminate\Database\Query\Expression('count(*)'));
 
