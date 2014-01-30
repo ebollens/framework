@@ -747,14 +747,6 @@ abstract class Model implements ArrayAccess, ArrayableInterface, JsonableInterfa
 	 */
 	public function belongsToMany($related, $table = null, $foreignKey = null, $otherKey = null, $relation = null)
 	{
-		// If no relationship name was passed, we will pull backtraces to get the
-		// name of the calling function. We will use that function name as the
-		// title of this relation since that is a great convention to apply.
-		if (is_null($relation))
-		{
-			$caller = $this->getBelongsToManyCaller();
-		}
-
 		// First, we'll need to determine the foreign key and "other key" for the
 		// relationship. Once we have determined the keys we'll make the query
 		// instances as well as the relationship instances we need for this.
